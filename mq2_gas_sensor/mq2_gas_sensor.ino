@@ -9,7 +9,7 @@ Serial.begin(9600);
 
 void loop() {
 sensorValue = analogRead(sensor);
-Serial.println(sensorValue, DEC);
+Serial.println(sensorValue
 if (sensorValue > 600) {
 digitalWrite(8, HIGH);
 delay(1000);
