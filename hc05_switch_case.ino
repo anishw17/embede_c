@@ -58,7 +58,6 @@ void loop()
       digitalWrite(9,HIGH);
       digitalWrite(ledr,HIGH);
       break;
-
     }
   }
 }
