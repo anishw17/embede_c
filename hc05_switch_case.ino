@@ -1,7 +1,8 @@
-// rx tx connect karun ghe! declare chi garaj nahie!
-// codse written by - ANISH WALKE
+
+// code written by - ANISH WALKE
 #include<SoftwareSerial.h>
 
+int w = 13;
 int in1 = 6;
 int in2 = 5;
 int in3 = 3;
@@ -18,29 +19,31 @@ void setup()
   pinMode(3,OUTPUT);
   pinMode(9,OUTPUT);
   pinMode(5,OUTPUT);
+  pinMode(13,OUTPUT);
 }
 void loop()
 {
   while(Serial.available() > 0)
   {
     data = Serial.read();
-    Serial.print(data);
+    Serial.println(data);
+   
     switch(data)
     {
       case 'f':
       digitalWrite(6,HIGH);
       digitalWrite(3,HIGH);
-      digitalWrite(ledg,HIGH);
+      digitalWrite(13,HIGH);
       break;
       
       case 'r':
       digitalWrite(6,HIGH);
-      digitalWrite(9,HIGH);
+      
       digitalWrite(ledg,HIGH);
       break;
 
       case 'l':
-      digitalWrite(5,HIGH);
+      
       digitalWrite(3,HIGH);
       digitalWrite(ledg,HIGH);
       break;
@@ -54,10 +57,11 @@ void loop()
       break;
 
       case 'rev':
-       digitalWrite(5,HIGH);
+      digitalWrite(5,HIGH);
       digitalWrite(9,HIGH);
       digitalWrite(ledr,HIGH);
       break;
+
     }
   }
 }
